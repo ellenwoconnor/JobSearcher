@@ -1,6 +1,7 @@
 # Job search at partner companies
 from bs4 import BeautifulSoup
 import urllib2
+# import os
 
 #########################################################################
 # Goal is to automate job search among the Hackbright partner companies 
@@ -12,9 +13,11 @@ import urllib2
 # look for 'engineer' positions)
 #########################################################################
 
+devkey = os.environ['DEVKEY']
+
 class JobInspector():
     
-    def __init__(self, location, is_partner): 
+    def __init__(self, location, is_partner):
         self.city = location
         self.is_partner = is_partner
 
@@ -44,6 +47,8 @@ class JobInspector():
 
         return companies
 
+    def get_listings(self, title):
+        
 
     def get_all_titles(self, target=None):
         """Get all available job titles"""
@@ -78,7 +83,7 @@ class JobInspector():
 
 
     def scrape_jobs(self, soup):
-        """Gets all of the relevant information off of each page.""" 
+        """Gets all of the relevant information off of each page."""
 
         page_listings = soup.find_all("a", class_= "jobLink")
 
@@ -98,8 +103,8 @@ class JobInspector():
     #     return [title for self.titles if target in title]
     
 
-
-
 newJobs = JobInspector('sf', True)
+
+
 
 

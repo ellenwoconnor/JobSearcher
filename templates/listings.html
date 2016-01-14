@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>My Title</title>
+</head>
+
+<body>
+
+<p>This is the first paragraph in the body of your new HTML file!</p>
+<span id=indeed_at><a href="http://www.indeed.com/">jobs</a> by <a
+href="http://www.indeed.com/" title="Job Search"><img
+src="http://www.indeed.com/p/jobsearch.gif" style="border: 0;
+vertical-align: middle;" alt="Indeed job search"></a></span>
+
+<ul>Job listings!
+{% for listing in listings %}
+    <li> <a href={{ listing[2] }}>{{ listing[0] }}: {{ listing[1] }}. {{ listing[3] }}.</a></li>
+{% endfor %}    
+</ul>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+<!--
+indeed_jobroll_title = 'Google jobs';
+indeed_jobroll_background_color = "#FFFFFF";
+indeed_jobroll_width = "150px";
+indeed_jobroll_text_font = "10px Arial, Helvetica, Sans serif";
+indeed_jobroll_link_color = "#000000";
+indeed_jobroll_border = "1px solid #000000";
+//-->
+</script>
+<script type="text/javascript" src="http://www.indeed.com/jobroll?q=Google&l=&limit=5">
+</script>
+<noscript><a href="http://www.indeed.com/">Jobs</a> by Indeed</noscript>
+
